@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Calculator</title>
+    <style>
+        *{
+            font-family: arial;
+        }
+        p{
+            border-bottom: 2px dotted;
+            margin: auto;
+            text-align: center;
+            width: 280px;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            margin-top: 40px;
+        }
+        input{
+            width: 65px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+        .t1{
+            width: 91%;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            padding: 0 10px;
+        }
+        .t1:focus, .t1:hover{
+            box-shadow: 0 0px 5px #0b0b86;
+        }
+        table{
+            border: 2px solid #4b4a4a;
+            margin: auto;
+            padding: 10px 12px 13px;
+            box-shadow: 10px 10px 120px #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <p>Online Calculator</p>
+    <br>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="input" class="t1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" name="one" value="1" OnClick="document.getElementById('input').value += '1'">
+                    <input type="button" name="two" value="2" OnClick="document.getElementById('input').value += '2'">
+                    <input type="button" name="three" value="3" OnClick="document.getElementById('input').value += '3'">
+                    <input type="button" name="plus" value="+" OnClick="document.getElementById('input').value += '+'">
+                    <input type="button" name="Backspace" value="Del" OnClick="document.getElementById('input').value = document.getElementById('input').value.slice(0, document.getElementById('input').value.length-1)">
+                    <br>
+                    <input type="button" name="four" value="4" OnClick="document.getElementById('input').value += '4'">
+                    <input type="button" name="five" value="5" OnClick="document.getElementById('input').value += '5'">
+                    <input type="button" name="six" value="6" OnClick="document.getElementById('input').value += '6'">
+                    <input type="button" name="minus" value="-" OnClick="document.getElementById('input').value += '-'">
+                    <input type="button" name="square" value="x^2" OnClick="document.getElementById('input').value = Math.pow(document.getElementById('input').value, 2)">
+                    <br>
+                    <input type="button" name="seven" value="7" OnClick="document.getElementById('input').value += '7'">
+                    <input type="button" name="eight" value="8" OnClick="document.getElementById('input').value += '8'">
+                    <input type="button" name="nine" value="9" OnClick="document.getElementById('input').value += '9'">
+                    <input type="button" name="x" value="*" OnClick="document.getElementById('input').value += '*'">
+                    <input type="button" name="cube" value="x^3" OnClick="document.getElementById('input').value = Math.pow(document.getElementById('input').value, 3)">
+                    <br>
+                    <input type="button" name="clear" value="clear" OnClick="document.getElementById('input').value = ''" style="padding-left: 0px;">
+                    <input type="button" name="zero" value="0" OnClick="document.getElementById('input').value += '0'">
+                    <input type="button" name="DoIt" value="=" OnClick="try { document.getElementById('input').value = eval(document.getElementById('input').value); } catch(e) { alert('Invalid expression'); }">
+                    <input type="button" name="div" value="/" OnClick="document.getElementById('input').value += '/'">
+                    <input type="button" name="sqrt" value="sqrt" OnClick="document.getElementById('input').value = Math.sqrt(document.getElementById('input').value)">
+                    <br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
